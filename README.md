@@ -7,7 +7,7 @@
 - supports text and webpage media messages
 - Faster speed
 - Forcesubscribe available 
-- `/hack` - (For owner only) Use this command to start Hacking Process Again And To Se Help Menu Of Codes. 
+- `/hack` - (For User only) Use this command to start Hacking Process Again And To Se Help Menu Of Codes. 
 - Time delay is added to avoid FloodWait and keep user account safe. 
 
 # Variables
