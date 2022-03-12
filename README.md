@@ -12,10 +12,9 @@
 
 # Variables
 
-- `API_ID`
-- `API_HASH`
-- `SESSION`
-- `BOT TOKEN` 
+- `API_ID` - Get It From my.telegram.org
+- `API_HASH` - Get It From my.telegram.org
+- `BOT TOKEN` - Get it From [@BotFather](https://t.me/BotFather) 
 
 # Deploy
 
