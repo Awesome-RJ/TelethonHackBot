@@ -1,8 +1,5 @@
-# TelethonHackBot
-
-
 <h1 align="center">
-  <b>Session Login  Bot</b>
+  <b>TelethonHackBot</b>
 </h1> 
 
 - works for Telethon Session
