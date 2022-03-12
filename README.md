@@ -36,7 +36,7 @@
 Buildpacks for manual deploy:
 
 - `heroku/python`
-- `https://github.com/FriDayXD/heroku-buildpack-ffmpeg-latest.git`
+- `https://github.com/TG-TeamIndia/TelethonHackBot.git`
 
 # CREDITS
 `BLAZE` 
