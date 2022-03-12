@@ -38,8 +38,10 @@ Buildpacks for manual deploy:
 
 `BLAZE` 
 
-`STARK`
+`SAMMY`
 
 `ABHI`
+
+`HARSH`
 
 Special Thanks To `Telethon Chats`
