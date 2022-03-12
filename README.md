@@ -35,8 +35,11 @@ Buildpacks for manual deploy:
 - `https://github.com/TG-TeamIndia/TelethonHackBot.git`
 
 # CREDITS
-`BLAZE` 
-`STARK`
-`ABHI`
-Special Thank To `XArmy`
 
+`BLAZE` 
+
+`STARK`
+
+`ABHI`
+
+Special Thanks To `Telethon Chats`
